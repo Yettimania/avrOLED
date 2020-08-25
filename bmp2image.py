@@ -1,30 +1,12 @@
 '''
 
-    This script takes in a bitmap and outputs a text file that is a
-    byte array used in Arduino header files.
+    This script that takes a bitmap and outputs a header file that can be used
+    with AVR microcontrollers 8bit. 
 
-    You'll need python 2.7
-
-    usage: python bmp2array.py macaque.bmp
-    output: output.txt
-        Copy and paste this content into a image.h file that
-        is called in an Arduino sketch.
-        For an example see: https://github.com/sparkfun/SparkFun_SSD1320_OLED_Arduino_Library/tree/master/examples/Example2_Graphics
-
-    This is helpful if you need to display a static bitmap on a
-    grayscale OLED display (like the SparkFun flexible OLED).
-
-    This script converts the image to 4-bit grayscale. This means a
-    normal 4-byte color is changed to one byte (the blue channel)
-    then the last four bits are cut off and combined with the next
-    4-byte color to create one 8-bit byte (containing two
-    grayscale pixels).
+    usage: python bmp2image.py image.bmp
+    output: output.h
 
 '''
-
-#Various inspiration from
-#http://www.dragonwins.com/domains/getteched/bmp/bmpfileformat.htm
-#https://github.com/yy502/ePaperDisplay
 
 import sys
 import struct
